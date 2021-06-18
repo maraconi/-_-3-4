@@ -38,13 +38,11 @@ class Student:
               f'Завершенные курсы: {self.finished_courses[0]}\n'
         return res
 
-
 class Mentor:
     def __init__(self, name, surname):
         self.name = name
         self.surname = surname
         self.courses_attached = ['Python', 'Git']
-
 
 class Lecturer(Mentor):
     def __init__(self, name, surname):
@@ -72,7 +70,6 @@ class Lecturer(Mentor):
               f'Средняя оценка за лекции: {self.average_grades()}\n'
         return res
 
-
 class Reviewer(Mentor):
     def rate_hw(self, student, course, grade):
         if isinstance(student, Student) and course in self.courses_attached and course in student.courses_in_progress:
@@ -87,7 +84,6 @@ class Reviewer(Mentor):
         res = f'Имя: {self.name}\nФамилия: {self.surname}\n'
         return res
 
-
 def average_grades_student(student_list, course):
     sum_grades = 0
     for student in student_list:
@@ -96,7 +92,6 @@ def average_grades_student(student_list, course):
                 sum_grades += sum(grades) / len(grades)
     return sum_grades / len(student_list)
 
-
 def average_grades_lecture(lecture_list, course):
     sum_grades = 0
     for lecture in lecture_list:
@@ -104,7 +99,6 @@ def average_grades_lecture(lecture_list, course):
             if c == course:
                 sum_grades += sum(grades) / len(grades)
     return sum_grades / len(lecture_list)
-
 
 student_1 = Student('Ivan', 'Petrov', 'your_gender')
 student_1.finished_courses = ['Введение в программирование']
